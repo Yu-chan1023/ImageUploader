@@ -1,0 +1,199 @@
+.container {
+  width: 402px;
+  height: 469px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 30px;
+  text-align: center;
+  color: #4F4F4F;
+}
+
+// ============================================
+// new
+// ============================================
+
+.new-container h2{
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.new-container h5{
+  font-weight: normal;
+  font-size: 10px;
+  margin-bottom: 30px;
+}
+.drop {
+  height: 220px;
+  border-radius: 12px;
+  border: 1px dashed #97BEF4;
+  background: #F6F8FB;
+  padding: 36px 0;
+  position: relative;
+}
+.drop h6{
+  font-weight: 500;
+  font-size: 12px;
+  color: #BDBDBD;
+}
+input[type="file"] {
+  visibility: hidden;
+  position: absolute;
+}
+.drop label {
+  display: inline-block;
+  font-size: 12px;
+  background: #2F80ED;
+  padding: 8px 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: white;
+  margin-top: 30px;
+}
+.drop-img i{
+  display: block;
+  font-size: 115px;
+  color: #CCCCCC;
+}
+.submit input{
+  background: #2F80ED;
+  font-size: 12px;
+  padding: 8px 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #FFFFFF;
+  margin-top: 30px;
+  border: none;
+}
+#preview {
+  position: absolute;
+  top: 10%;
+}
+#preview img{
+  width: 50%;
+  height: 150px;
+  border-radius: 10px;
+}
+
+
+// ============================================
+// index
+// ============================================
+
+.check i {
+  font-size: 40px;
+  color: #219653;
+}
+// .index-container {
+//   padding: 40px 30px;
+// }
+.index-container h3{
+  font-size: 18px;
+  margin: 10px 0 25px;
+}
+.upload-img {
+  height: 225px;
+  margin-bottom: 50px;
+}
+.upload-img img{
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
+.copy-link {
+  display: flex;
+  height: 34px;
+  background: #F6F8FB;
+  font-size: 10px;
+  padding: 2px;
+  border-radius: 12px;
+  border: 1px solid #E0E0E0
+}
+.link {
+  width: calc(100% - 74px);
+  height: 34px;
+  line-height: 34px;
+  text-align: left;
+  padding-left: 10px;
+  border: none;
+  background: transparent;
+}
+.link:focus {
+	outline: 0;
+}
+.copy-btn {
+  width: 74px;
+  height: 34px;
+  line-height: 34px;
+  background: #2F80ED;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  border-radius: 12px;
+  border: none;
+}
+
+.copy-btn:focus {
+	outline: 0;
+}
+
+#loader-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: white;
+  z-index: 4;
+}
+#loader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 402px;
+  height: 150px !important;
+  color: #fff;
+  background: white;
+  z-index: 5;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 30px;
+}
+#loader h3{
+  color: black;
+  font-size: 28px;
+  font-weight: 100;
+  margin-top: 20px;
+
+}
+
+#line {
+    width: 100%; 
+    height: 5px;
+    margin: 40px auto;
+    background:#ddd;
+}
+/* ラインのアニメーション時の色と動き */
+.expand {
+    width: 50px;
+    height: 5px;
+    margin: 0;
+    background: #2F80ED;
+    position: absolute;
+    animation: fullexpand 3s ease-out infinite forwards running ;
+}
+ /* キーフレームを使った横幅100%のローディングの始まりと終わりの変化 */
+ @keyframes fullexpand {
+    0%{ 
+      transform: translateX(0%);
+    }
+    100%{ 
+      transform: translateX(350px);
+    } 
+} 
