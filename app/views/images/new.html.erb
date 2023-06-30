@@ -1,0 +1,62 @@
+<div class="container new-container">
+  <h2>Uploader your image</h2>
+  <h5>File should be Jpeg Png...</h5>
+  <%= form_with url: root_path do |f| %>
+    <div class="drop" id="drop">
+      <div class="drop-img">
+        <%= icon('fa', 'image') %> 
+      </div>
+      <div id="preview"></div>
+      <h6>Drag & Drop your image here</h6>
+      <%= f.label :image, "Choose a file" %>
+      <%= f.file_field :image, onChange: "photoPreview(event)" %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <div id="preview"></div>
+    <div class="submit">
+      <%= f.submit "Upload" %>
+    </div>
+  <% end %>
+    
+</div>
+
+<script>
+  {{
+    var dropArea = document.getElementById('drop');
+    var fileInput = document.getElementById('image');
+
+    dropArea.addEventListener('dragover', function(e){
+      e.preventDefault();
+    });
+    dropArea.addEventListener('dragleave', function(e){
+      e.preventDefault();
+    });
+    dropArea.addEventListener('drop', function(e){
+      e.preventDefault();
+      var files = e.dataTransfer.files;
+      fileInput.files = files;
+      photoPreview('onChenge',files[1]);
+    });
+    function photoPreview(event, file = null) {
+      var file = file;
+      if(file === null){
+          file = event.target.files[0];
+      }
+      var reader = new FileReader();
+      var preview = document.getElementById("preview");
+      var previewImage = document.getElementById("previewImage");
+
+      if(previewImage != null) {
+        preview.removeChild(previewImage);
+      }
+      reader.onload = function(event) {
+        var img = document.createElement("img");
+        img.setAttribute("src", reader.result);
+        img.setAttribute("id", "previewImage");
+        preview.appendChild(img);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  }}
+</script>
